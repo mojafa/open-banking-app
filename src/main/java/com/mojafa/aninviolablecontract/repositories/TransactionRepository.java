@@ -1,2 +1,12 @@
-package com.mojafa.aninviolablecontract.repositories;public class TransactionRepository {
+package com.mojafa.aninviolablecontract.repositories;
+
+import com.mojafa.aninviolablecontract.models.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    List<Transaction> findAllByAccountNumber(int accountNumber);
 }

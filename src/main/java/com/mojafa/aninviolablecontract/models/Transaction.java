@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.mojafa.aninviolablecontract.dto.Type;
 
 @Entity
 @Data
@@ -19,16 +20,11 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Type type;
-    private Integer accountNumber
+    private Integer accountNumber;
     private String currency;
     private Double amount;
     private String merchantName;
     private String merchantLogo;
 
-
-    public enum Type {
-        DEBIT,
-        CREDIT
-    }
 
 }
