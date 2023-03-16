@@ -1,2 +1,4 @@
-package com.mojafa.aninviolablecontract;public class TransactionServiceTest {
+package com.mojafa.aninviolablecontract;
+
+public class TransactionServiceTest {
 }
