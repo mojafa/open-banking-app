@@ -1,7 +1,6 @@
-package com.mojafa.aninviolablecontract;
+package com.mojafa.aninviolablecontract.services;
 
 import com.mojafa.aninviolablecontract.models.Transaction;
-import com.mojafa.aninviolablecontract.services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.annotations.Test;
