@@ -1,2 +1,6 @@
-package com.mojafa.aninviolablecontract.dto;public record Type() {
+package com.mojafa.aninviolablecontract.dto;
+
+public enum Type {
+    DEBIT,
+    CREDIT
 }
