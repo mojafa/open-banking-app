@@ -1,0 +1,11 @@
+version: latest
+
+services:
+
+  mysql-development:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: openbanking
+    ports:
+     -"3308:3306"
