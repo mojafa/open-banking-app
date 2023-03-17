@@ -1,6 +1,6 @@
 package com.mojafa.aninviolablecontract.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
