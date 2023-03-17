@@ -1,25 +1,25 @@
 package com.mojafa.aninviolablecontract.services;
 
-import com.mojafa.aninviolablecontract.models.Transaction;
+import com.mojafa.aninviolablecontract.dto.TransactionDTO;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.List;
+import java.util.Optional;
 
-@RunWith( SpringRunner.class)
-@SpringBootTest
+import static org.junit.Assert.assertEquals;
+
+
 public final class TransactionServiceTest {
+
     @Autowired
     private TransactionService transactionService;
 
+
     @Test
-    public void testFindAllByAccountNumber() {
-        String accountNumber = "1234567890";
-        List<Transaction> transactions = transactionService.findAllByAccountNumber(accountNumber);
-        // Expecting 3 to 5 transactions
-        assert transactions != null;
+    void testTransactions(){
+
+        int size = transactionService.findAllByAccountNumber(123L).size();
+        assertTrue("Error, there are not 3 transactions", size == 3);
     }
 }
