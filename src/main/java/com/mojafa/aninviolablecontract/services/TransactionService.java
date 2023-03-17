@@ -1,10 +1,10 @@
 package com.mojafa.aninviolablecontract.services;
 
-import com.mojafa.aninviolablecontract.dto.TransactionDTO;
+import com.mojafa.aninviolablecontract.models.Transaction;
+import com.mojafa.aninviolablecontract.repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TransactionService {
@@ -13,7 +13,7 @@ public class TransactionService {
         this.transactionRepository = transactionRepository;
     }
     public List<Transaction> findAllByAccountNumber(long accountNumber) {
-        return transactionRepository.getTransactionsByAccountNumber(accountNumber);
+        return transactionRepository.findAllByAccountNumber(accountNumber);
     }
 }
 
