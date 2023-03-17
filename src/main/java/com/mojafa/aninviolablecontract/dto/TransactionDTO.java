@@ -1,12 +1,16 @@
 package com.mojafa.aninviolablecontract.dto;
 
-public record TransactionDTO(
-    Long id,
-    Integer accountNumber,
-    String transactionType,
-    String transactionDate,
-    String transactionAmount,
-    String transactionCurrency,
-    String transactionStatus,
-    String transactionDescription) {
+import lombok.Data;
+
+import java.time.LocalDateTime;
+
+@Data
+public class TransactionDTO {
+    private String type;
+    private LocalDateTime date;
+    private long accountNumber;
+    private String currency;
+    private int amount;
+    private String merchantName;
+    private String merchantLogo;
 }
