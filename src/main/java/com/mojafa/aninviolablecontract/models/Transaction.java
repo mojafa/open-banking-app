@@ -1,23 +1,28 @@
 package com.mojafa.aninviolablecontract.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import lombok.Data;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
+@Entity
+@Table(name = "transactions")
 public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String type;
-    private Date date;
-    private String accountNumber;
+    private LocalDateTime date;
+    @Column(name = "account_number")
+    private long accountNumber;
     private String currency;
-    private BigDecimal amount;
+    private int amount;
+    @Column(name = "merchant_name")
     private String merchantName;
+    @Column(name = "merchant_logo")
     private String merchantLogo;
+
+
 }
