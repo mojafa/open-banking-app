@@ -1,13 +1,9 @@
 package com.mojafa.aninviolablecontract.services;
 
-import com.mojafa.aninviolablecontract.dto.TransactionDTO;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
-import java.util.Optional;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public final class TransactionServiceTest {
