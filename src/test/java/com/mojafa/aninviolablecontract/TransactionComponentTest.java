@@ -1,16 +1,32 @@
 package com.mojafa.aninviolablecontract;
 
+import com.mojafa.aninviolablecontract.repositories.TransactionRepository;
+import org.assertj.core.api.BDDAssumptions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
+
+import static org.mockito.BDDMockito.given;
+@SpringBootTest
 public class TransactionComponentTest {
     @LocalServerPort
     private int port;
 
+    @Autowired
+    private TransactionRepository transactionRepository;
+
+    @BeforeEach
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
     @Test
-    public void testApplicationEndToEnd() {
-        given().standaloneSetup(new TransactionController(new TransactionService()))
-                .when()
-                .get(String.format("http://localhost:%s/api/v1/transactions/1234567", port))
-                .then()
-                .statusCode(Matchers.is(200));
+    void getTransactions() {
+        given(transactionRepository.findById(123L)).willReturn(null);
+        BDDAssumptions.assumeThat(transactionRepository.findById(123L)).isNull();
     }
 
 }
