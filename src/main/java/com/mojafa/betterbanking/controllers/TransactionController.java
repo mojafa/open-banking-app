@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api/v1/transactions")
 public class TransactionController {
     private final TransactionService transactionService;
-
+    // Use constructor injection to inject the TransactionService
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }

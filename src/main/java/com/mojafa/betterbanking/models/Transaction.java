@@ -29,6 +29,4 @@ public class Transaction {
     private String merchantName;
     @Column(name = "merchant_logo")
     private String merchantLogo;
-
-
 }
