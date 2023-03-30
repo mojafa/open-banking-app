@@ -1,4 +1,4 @@
-package com.mojafa.aninviolablecontract.models;
+package com.mojafa.betterbanking.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

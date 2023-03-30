@@ -1,6 +1,6 @@
-package com.mojafa.aninviolablecontract.repositories;
+package com.mojafa.betterbanking.repositories;
 
-import com.mojafa.aninviolablecontract.models.Transaction;
+import com.mojafa.betterbanking.models.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

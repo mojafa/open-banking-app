@@ -1,9 +1,9 @@
-package com.mojafa.aninviolablecontract.controllers;
+package com.mojafa.betterbanking.controllers;
 
 
-import com.mojafa.aninviolablecontract.dto.TransactionDTO;
-import com.mojafa.aninviolablecontract.models.Transaction;
-import com.mojafa.aninviolablecontract.services.TransactionService;
+import com.mojafa.betterbanking.dto.TransactionDTO;
+import com.mojafa.betterbanking.models.Transaction;
+import com.mojafa.betterbanking.services.TransactionService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

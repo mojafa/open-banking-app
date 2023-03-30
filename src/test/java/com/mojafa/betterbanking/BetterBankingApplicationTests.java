@@ -1,4 +1,4 @@
-package com.mojafa.aninviolablecontract;
+package com.mojafa.betterbanking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

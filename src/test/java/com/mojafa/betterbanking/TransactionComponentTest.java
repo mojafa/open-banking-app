@@ -1,6 +1,6 @@
-package com.mojafa.aninviolablecontract;
+package com.mojafa.betterbanking;
 
-import com.mojafa.aninviolablecontract.repositories.TransactionRepository;
+import com.mojafa.betterbanking.repositories.TransactionRepository;
 import org.assertj.core.api.BDDAssumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

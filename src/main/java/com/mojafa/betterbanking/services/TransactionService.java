@@ -1,7 +1,7 @@
-package com.mojafa.aninviolablecontract.services;
+package com.mojafa.betterbanking.services;
 
-import com.mojafa.aninviolablecontract.models.Transaction;
-import com.mojafa.aninviolablecontract.repositories.TransactionRepository;
+import com.mojafa.betterbanking.models.Transaction;
+import com.mojafa.betterbanking.repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

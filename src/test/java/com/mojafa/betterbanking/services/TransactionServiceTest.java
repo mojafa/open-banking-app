@@ -1,7 +1,6 @@
-package com.mojafa.aninviolablecontract.services;
+package com.mojafa.betterbanking.services;
 
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;

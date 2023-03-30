@@ -1,4 +1,4 @@
-package com.mojafa.aninviolablecontract.dto;
+package com.mojafa.betterbanking.dto;
 
 import lombok.Data;
 

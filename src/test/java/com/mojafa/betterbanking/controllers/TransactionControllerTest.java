@@ -1,4 +1,4 @@
-package com.mojafa.aninviolablecontract.controllers;
+package com.mojafa.betterbanking.controllers;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
