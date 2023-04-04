@@ -14,7 +14,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Details about the interest that may be payable to the BCA account holders
  */
 @ApiModel(description = "Details about the interest that may be payable to the BCA account holders")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class CreditInterest   {
   @JsonProperty("TierBandSet")
   

@@ -15,7 +15,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Contains details of fees and charges which are not associated with either borrowing or features/benefits
  */
 @ApiModel(description = "Contains details of fees and charges which are not associated with either borrowing or features/benefits")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OtherFeesCharges   {
   @JsonProperty("FeeChargeDetail")
   

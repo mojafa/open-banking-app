@@ -14,7 +14,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * An array of detail error codes, and messages, and URLs to documentation to help remediation.
  */
 @ApiModel(description = "An array of detail error codes, and messages, and URLs to documentation to help remediation.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OBErrorResponse1   {
   @JsonProperty("Code")
   private String code;

@@ -21,7 +21,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Other fees/charges details
  */
 @ApiModel(description = "Other fees/charges details")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OBBCAData1FeeChargeDetail   {
   /**
    * Categorisation of fees and charges into standard categories.

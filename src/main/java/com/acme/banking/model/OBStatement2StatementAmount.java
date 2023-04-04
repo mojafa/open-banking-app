@@ -13,7 +13,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Set of elements used to provide details of a generic amount for the statement resource.
  */
 @ApiModel(description = "Set of elements used to provide details of a generic amount for the statement resource.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OBStatement2StatementAmount   {
   @JsonProperty("CreditDebitIndicator")
   private OBCreditDebitCode0 creditDebitIndicator;

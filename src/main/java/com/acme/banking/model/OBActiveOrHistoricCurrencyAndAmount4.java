@@ -11,7 +11,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * The amount of the final Standing Order
  */
 @ApiModel(description = "The amount of the final Standing Order")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OBActiveOrHistoricCurrencyAndAmount4   {
   @JsonProperty("Amount")
   private String amount;

@@ -11,7 +11,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 /**
  * OBReadConsent1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-04T23:20:57.547696+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
 public class OBReadConsent1   {
   @JsonProperty("Data")
   private OBReadConsent1Data data;

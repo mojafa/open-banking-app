@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 class TransactionServiceTest {
     @Autowired
-    private TransactionService transactionService;
+    private com.mojafa.betterbanking.services.TransactionService transactionService;
     @Test
     public void testTransactionCount() {
         assertEquals(1, transactionService.findAllByAccountNumber(1234567).size());
