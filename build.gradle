@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.4'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id "org.openapi.generator" version "5.3.0"
 }
 
 group = 'com.mojafa'
@@ -23,15 +24,72 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.4'
     implementation 'org.jetbrains:annotations:24.0.1'
-    testImplementation 'junit:junit:4.13.2'
+	implementation 'io.springfox:springfox-swagger2:3.0.0'
+	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
+	implementation 'javax.annotation:javax.annotation-api:1.3.2'
+	testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.testng:testng:7.7.0'
 	testImplementation 'junit:junit:4.13.2'
 	compileOnly 'org.projectlombok:lombok:1.18.26'
 	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.4'
 	implementation 'mysql:mysql-connector-java:8.0.32'
+
+	// @Nullable annotation
+	implementation 'com.google.code.findbugs:jsr305:3.0.2'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+	implementation 'org.openapitools:jackson-databind-nullable:0.2.2'
+	// Bean Validation API support
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+	//Open Api Generator
+	// https://mvnrepository.com/artifact/org.openapitools/openapi-generator
+	implementation 'org.openapitools:openapi-generator:6.0.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task srcZip(type: Zip) {
+	classifier = 'src'
+	from projectDir
+	include 'open-api/*'
+	include 'src/**/*'
+	include '*.gradle'
+	include 'README.md'
+	doLast {
+		println "Path to zip: $archivePath.path"
+	}
+}
+
+openApiGenerate {
+	generatorName = "spring"
+	generateModelDocumentation = false
+	generateApiDocumentation = false
+	inputSpec = "$rootDir/open-api/open-banking.yaml".toString()
+	outputDir = "$buildDir/generated".toString()
+	invokerPackage = "com.acme.banking.invoker"
+	modelPackage = "com.acme.banking.model"
+	apiPackage = "com.acme.banking.api"
+	configOptions = [
+			dateLibrary: "java17",
+			basePackage: "com.acme.banking",
+			interfaceOnly: "true",
+			useBeanValidation: "false"
+	]
+}
+
+task copyGenerated(type: Copy) {
+	from "$buildDir/generated/src/main/java/com/acme/banking/model"
+	into "$rootDir/src/main/java/com/acme/banking/model"
+}
+
+task cleanGenerated(type: Delete) {
+	delete "$rootDir/src/main/java/com"
+}
+
+clean.dependsOn cleanGenerated
