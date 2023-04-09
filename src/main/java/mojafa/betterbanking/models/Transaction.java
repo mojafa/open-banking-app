@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +21,7 @@ public class Transaction {
     private Long id;
 
     private String type;
-    private LocalDateTime date;
+    private Date date;
     @Column(name = "account_number")
     private long accountNumber;
     private String currency;
