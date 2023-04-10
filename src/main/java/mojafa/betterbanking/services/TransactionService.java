@@ -1,24 +1,28 @@
 package mojafa.betterbanking.services;
 
+import lombok.extern.slf4j.Slf4j;
 import mojafa.betterbanking.models.Transaction;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import mojafa.betterbanking.repositories.MerchantDetailsRepository;
 import mojafa.betterbanking.repositories.TransactionApiClient;
+import mojafa.betterbanking.repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
+@Slf4j
 @Service
 public class TransactionService {
     public TransactionService(
             final TransactionApiClient transactionApiClient,
-            final MerchantDetailsRepository merchantDetailsRepository) {
+            final MerchantDetailsRepository merchantDetailsRepository,
+            final TransactionRepository transactionRepository) {
         this.transactionApiClient = transactionApiClient;
         this.merchantDetailsRepository = merchantDetailsRepository;
+        this.transactionRepository = transactionRepository;
     }
-    @CircuitBreaker(name="transactionService", fallbackMethod = "foundNone")
-    public List<Transaction> findAllByAccountNumber(final Integer accountNumber) {
+    @CircuitBreaker(name="transactionService", fallbackMethod = "findAllByAccountNumber")
+    public List<Transaction> findAllByAccountNumber(final Integer accountNumber) throws Exception{
         var transactions = transactionApiClient.findAllByAccountNumber(accountNumber);
         transactions.forEach(transaction -> {
             merchantDetailsRepository
@@ -32,12 +36,14 @@ public class TransactionService {
 
 
     public List<Transaction> foundNone(final Integer accountNumber, final Throwable t) {
-        return Collections.emptyList();
+        log.info("falling back to database to get transactions");
+        return transactionRepository.findAllByAccountNumber(accountNumber);
     }
 
 
     private final TransactionApiClient transactionApiClient;
     private final MerchantDetailsRepository merchantDetailsRepository;
+    private final TransactionRepository transactionRepository;
 }
 
 
