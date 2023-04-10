@@ -25,7 +25,7 @@ public class TransactionServiceTest {
     @Mock private MerchantDetailsRepository merchantDetailsRepository;
     @InjectMocks private TransactionService transactionService;
 
-    @DisplayName("test TransactionService with mocj TransactionApiClient")
+    @DisplayName("test TransactionService with mock TransactionApiClient")
     @Test
     public void testTransactionCount() {
         when(transactionApiClient.findAllByAccountNumber(any()))
