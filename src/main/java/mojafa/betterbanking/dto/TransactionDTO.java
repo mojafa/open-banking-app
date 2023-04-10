@@ -1,16 +1,16 @@
-package com.mojafa.betterbanking.dto;
+package mojafa.betterbanking.dto;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 public class TransactionDTO {
     private String type;
-    private LocalDateTime date;
-    private long accountNumber;
+    private Date date;
+    private Integer accountNumber;
     private String currency;
-    private int amount;
+    private Double amount;
     private String merchantName;
     private String merchantLogo;
 }
