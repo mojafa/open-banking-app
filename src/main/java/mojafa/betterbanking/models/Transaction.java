@@ -1,4 +1,4 @@
-package com.mojafa.betterbanking.models;
+package mojafa.betterbanking.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,17 +17,14 @@ import java.util.Date;
 @Table(name = "transactions")
 public class Transaction {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String type;
     private Date date;
-    @Column(name = "account_number")
-    private long accountNumber;
+    private Integer accountNumber;
     private String currency;
-    private int amount;
-    @Column(name = "merchant_name")
+    private Double amount;
     private String merchantName;
-    @Column(name = "merchant_logo")
     private String merchantLogo;
 }
+
