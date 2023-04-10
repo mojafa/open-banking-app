@@ -1,4 +1,4 @@
-package com.mojafa.betterbanking.services;
+package mojafa.betterbanking.services;
 
 import mojafa.betterbanking.BetterBankingApplication;
 import mojafa.betterbanking.models.Transaction;
