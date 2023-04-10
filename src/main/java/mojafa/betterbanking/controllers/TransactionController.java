@@ -18,7 +18,8 @@ public class TransactionController {
     }
 
     @GetMapping("/{accountNumber}")
-    public List<Transaction> findAllByAccountNumber(@PathVariable("accountNumber") final Integer accountNumber) throws Exception {
+    public List<Transaction> findAllByAccountNumber(@PathVariable("accountNumber") final Integer accountNumber)
+            throws Exception {
         return transactionService.findAllByAccountNumber(accountNumber);
     }
 
