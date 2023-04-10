@@ -48,3 +48,5 @@ public class BetterBankingApplication {
 	@Value( "${mojafa.betterbanking.integration.url-base}" )
 	private String baseUrl;
 }
+
+// docker run -d -p 9001:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak
