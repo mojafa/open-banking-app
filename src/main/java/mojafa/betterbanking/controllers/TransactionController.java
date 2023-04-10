@@ -1,7 +1,5 @@
 package mojafa.betterbanking.controllers;
 
-
-import mojafa.betterbanking.dto.TransactionDTO;
 import mojafa.betterbanking.models.Transaction;
 import mojafa.betterbanking.services.TransactionService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,7 +18,7 @@ public class TransactionController {
     }
 
     @GetMapping("/{accountNumber}")
-    public List<Transaction> findAllByAccountNumber(@PathVariable("accountNumber") final Integer accountNumber) {
+    public List<Transaction> findAllByAccountNumber(@PathVariable("accountNumber") final Integer accountNumber) throws Exception {
         return transactionService.findAllByAccountNumber(accountNumber);
     }
 
