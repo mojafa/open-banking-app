@@ -1,6 +1,6 @@
 package com.mojafa.betterbanking.services;
 
-import com.mojafa.betterbanking.BetterBankingApplication;
+import mojafa.betterbanking.BetterBankingApplication;
 import mojafa.betterbanking.models.Transaction;
 import mojafa.betterbanking.repositories.MerchantDetailsRepository;
 import mojafa.betterbanking.repositories.TransactionApiClient;
@@ -21,15 +21,17 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest(classes = {BetterBankingApplication.class})
 public class TransactionServiceTest {
+
     @Mock private TransactionApiClient transactionApiClient;
     @Mock private MerchantDetailsRepository merchantDetailsRepository;
     @InjectMocks private TransactionService transactionService;
 
     @DisplayName("test TransactionService with mock TransactionApiClient")
     @Test
-    public void testTransactionCount() {
+    public void testTransactionCount() throws Exception {
         when(transactionApiClient.findAllByAccountNumber(any()))
                 .thenReturn(List.of(new Transaction()));
+
         assertEquals(1, transactionService.findAllByAccountNumber(1234567).size());
     }
 }

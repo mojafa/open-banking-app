@@ -45,6 +45,6 @@ public class BetterBankingApplication {
 		};
 	}
 
-	@Value( "" )
+	@Value( "${mojafa.betterbanking.integration.url-base}" )
 	private String baseUrl;
 }
