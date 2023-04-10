@@ -35,7 +35,7 @@ public class TransactionService {
     }
 
 
-    public List<Transaction> foundNone(final Integer accountNumber, final Throwable t) {
+    private List<Transaction> findAllByAccountNumber(final Integer accountNumber, final Throwable t) {
         log.info("falling back to database to get transactions");
         return transactionRepository.findAllByAccountNumber(accountNumber);
     }
