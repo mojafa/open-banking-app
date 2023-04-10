@@ -1,4 +1,4 @@
-package com.mojafa.betterbanking;
+package mojafa.betterbanking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
