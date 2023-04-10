@@ -1,29 +1,44 @@
-package com.mojafa.betterbanking.services;
+package mojafa.betterbanking.services;
 
-import com.mojafa.betterbanking.models.Transaction;
-import com.mojafa.betterbanking.repositories.TransactionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import mojafa.betterbanking.models.Transaction;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import mojafa.betterbanking.repositories.MerchantDetailsRepository;
+import mojafa.betterbanking.repositories.TransactionApiClient;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
 public class TransactionService {
-    private final TransactionRepository transactionRepository;
-    @Autowired
-    public TransactionService(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
+    public TransactionService(
+            final TransactionApiClient transactionApiClient,
+            final MerchantDetailsRepository merchantDetailsRepository) {
+        this.transactionApiClient = transactionApiClient;
+        this.merchantDetailsRepository = merchantDetailsRepository;
     }
-    public List<Transaction> findAllByAccountNumber(long accountNumber) {
-        return transactionRepository.findAllByAccountNumber(accountNumber);
+    @CircuitBreaker(name="transactionService", fallbackMethod = "foundNone")
+    public List<Transaction> findAllByAccountNumber(final Integer accountNumber) {
+        var transactions = transactionApiClient.findAllByAccountNumber(accountNumber);
+        transactions.forEach(transaction -> {
+            merchantDetailsRepository
+                    .findMerchantLogo(transaction.getMerchantName())
+                    .ifPresent(logo ->
+                            transaction.setMerchantLogo(logo)
+                    );
+        });
+        return transactions;
     }
+
+
+    public List<Transaction> foundNone(final Integer accountNumber, final Throwable t) {
+        return Collections.emptyList();
+    }
+
+
+    private final TransactionApiClient transactionApiClient;
+    private final MerchantDetailsRepository merchantDetailsRepository;
 }
 
-//    //findAll
-//    @Transactional
-//    public ResponseEntity<List<Trade>> findAllTrades() {
-//        //List<Trade> trade = tradeRepository.findAll();
-//        return new ResponseEntity<>(tradeRepository.findAllByOrderByIdAsc(), HttpStatus.OK);
-//    }
 
 
