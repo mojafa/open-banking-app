@@ -14,7 +14,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Account to or from which a cash entry is made.
  */
 @ApiModel(description = "Account to or from which a cash entry is made.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBReadDirectDebit2DataDirectDebit   {
   @JsonProperty("AccountId")
   private String accountId;

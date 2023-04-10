@@ -14,7 +14,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Details about Overdraft rates, fees &amp; charges
  */
 @ApiModel(description = "Details about Overdraft rates, fees & charges")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class Overdraft1   {
   @JsonProperty("Notes")
   

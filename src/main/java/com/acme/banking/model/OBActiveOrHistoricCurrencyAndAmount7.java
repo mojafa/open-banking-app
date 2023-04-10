@@ -11,7 +11,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Amount of money associated with the statement interest amount type.
  */
 @ApiModel(description = "Amount of money associated with the statement interest amount type.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBActiveOrHistoricCurrencyAndAmount7   {
   @JsonProperty("Amount")
   private String amount;

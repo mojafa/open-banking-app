@@ -17,7 +17,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Details about any caps (maximum charges) that apply to a particular or group of fee/charge
  */
 @ApiModel(description = "Details about any caps (maximum charges) that apply to a particular or group of fee/charge")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBReadProduct2DataOtherProductTypeFeeChargeCap   {
   /**
    * Fee/charge type which is being capped

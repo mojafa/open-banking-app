@@ -11,7 +11,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Other fee rate type which is not in the standard rate type list
  */
 @ApiModel(description = "Other fee rate type which is not in the standard rate type list")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBOtherCodeType15   {
   @JsonProperty("Code")
   private String code;

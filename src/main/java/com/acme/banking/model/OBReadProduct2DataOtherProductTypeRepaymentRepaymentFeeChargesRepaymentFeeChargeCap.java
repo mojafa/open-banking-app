@@ -17,7 +17,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * RepaymentFeeChargeCap sets daily, weekly, monthly, yearly limits on the fees that are charged
  */
 @ApiModel(description = "RepaymentFeeChargeCap sets daily, weekly, monthly, yearly limits on the fees that are charged")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBReadProduct2DataOtherProductTypeRepaymentRepaymentFeeChargesRepaymentFeeChargeCap   {
   /**
    * Fee/charge type which is being capped

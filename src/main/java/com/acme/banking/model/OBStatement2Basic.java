@@ -21,7 +21,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Provides further details on a statement resource.
  */
 @ApiModel(description = "Provides further details on a statement resource.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBStatement2Basic   {
   @JsonProperty("AccountId")
   private String accountId;

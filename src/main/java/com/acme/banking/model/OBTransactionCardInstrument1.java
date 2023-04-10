@@ -12,7 +12,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Set of elements to describe the card instrument used in the transaction.
  */
 @ApiModel(description = "Set of elements to describe the card instrument used in the transaction.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBTransactionCardInstrument1   {
   /**
    * Name of the card scheme.

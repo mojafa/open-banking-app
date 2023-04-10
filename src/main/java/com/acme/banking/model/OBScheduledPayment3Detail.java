@@ -15,7 +15,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 /**
  * OBScheduledPayment3Detail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBScheduledPayment3Detail   {
   @JsonProperty("AccountId")
   private String accountId;

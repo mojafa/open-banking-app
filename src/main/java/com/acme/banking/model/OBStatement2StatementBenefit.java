@@ -12,7 +12,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Set of elements used to provide details of a benefit or reward amount for the statement resource.
  */
 @ApiModel(description = "Set of elements used to provide details of a benefit or reward amount for the statement resource.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBStatement2StatementBenefit   {
   @JsonProperty("Type")
   private String type;

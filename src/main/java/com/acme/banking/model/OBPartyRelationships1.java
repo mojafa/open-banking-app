@@ -12,7 +12,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * The Party&#39;s relationships with other resources.
  */
 @ApiModel(description = "The Party's relationships with other resources.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBPartyRelationships1   {
   @JsonProperty("Account")
   private OBPartyRelationships1Account account;

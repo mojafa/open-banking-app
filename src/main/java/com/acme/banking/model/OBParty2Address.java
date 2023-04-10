@@ -14,7 +14,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * Postal address of a party.
  */
 @ApiModel(description = "Postal address of a party.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-05T00:22:36.234119+02:00[Africa/Johannesburg]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-04-10T19:39:13.527250+02:00[Africa/Johannesburg]")
 public class OBParty2Address   {
   @JsonProperty("AddressType")
   private OBAddressTypeCode addressType;
