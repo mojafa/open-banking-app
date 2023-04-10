@@ -1,4 +1,4 @@
-package com.mojafa.betterbanking.adapters.acme;
+package mojafa.betterbanking.adapters.acme;
 
 import com.acme.banking.model.OBActiveOrHistoricCurrencyAndAmount9;
 import com.acme.banking.model.OBCreditDebitCode1;
