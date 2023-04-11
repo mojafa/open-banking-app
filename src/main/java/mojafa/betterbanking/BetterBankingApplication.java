@@ -17,14 +17,13 @@ public class BetterBankingApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BetterBankingApplication.class, args);
 	}
+
 	@Bean
 	public WebClient webClient() {
 		return WebClient.builder()
 				.baseUrl(baseUrl)
 				.build();
 	}
-
-
 
 	@Profile(value = "dev")
 	@Bean
@@ -42,6 +41,17 @@ public class BetterBankingApplication {
 					.merchantLogo("images/globex.png")
 					.build();
 			repository.save(t);
+			var t1 = Transaction
+					.builder()
+					.type("Debit")
+					.date(new Date())
+					.accountNumber(123456)
+					.currency("USD")
+					.amount(100.00)
+					.merchantName("Globex")
+					.merchantLogo("images/globex.png")
+					.build();
+			repository.save(t1);
 		};
 	}
 
