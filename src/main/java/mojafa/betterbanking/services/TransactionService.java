@@ -6,6 +6,7 @@ import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import mojafa.betterbanking.repositories.MerchantDetailsRepository;
 import mojafa.betterbanking.repositories.TransactionApiClient;
 import mojafa.betterbanking.repositories.TransactionRepository;
+import org.springframework.security.access.prepost.PostFilter;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,18 +22,18 @@ public class TransactionService {
         this.merchantDetailsRepository = merchantDetailsRepository;
         this.transactionRepository = transactionRepository;
     }
+
+    @PostFilter(value = "hasAuthority(filterObject.accountNumber)")
     @CircuitBreaker(name="transactionService", fallbackMethod = "findAllByAccountNumber")
     public List<Transaction> findAllByAccountNumber(final Integer accountNumber) throws Exception{
         var transactions = transactionApiClient.findAllByAccountNumber(accountNumber);
-        transactions.forEach(transaction -> {
+        transactions.forEach(transaction ->
             merchantDetailsRepository
                     .findMerchantLogo(transaction.getMerchantName())
-                    .ifPresent(logo ->
-                            transaction.setMerchantLogo(logo)
-                    );
-        });
-        return transactions;
-    }
+                    .ifPresent(transaction::setMerchantLogo)
+            );
+            return transactions;
+        }
 
 
     private List<Transaction> findAllByAccountNumber(final Integer accountNumber, final Throwable t) {
